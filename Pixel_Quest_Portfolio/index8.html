@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pixel Quest Portfolio - [Your Name]</title>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-bg: #000020; /* Deep space blue */
+            --primary-text: #00FF00; /* Bright green */
+            --accent-color: #FFD700; /* Gold */
+            --border-color: #00AAFF; /* Bright blue */
+            --dialog-bg: #101030;
+            --button-bg: #505070;
+            --button-hover-bg: #707090;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Press Start 2P', cursive;
+            background-color: var(--primary-bg);
+            color: var(--primary-text);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+            overflow-x: hidden; /* Prevent horizontal scroll with pixel borders */
+        }
+
+        .game-container {
+            width: 90%;
+            max-width: 800px;
+            border: 4px solid var(--border-color);
+            box-shadow: 0 0 15px var(--border-color), inset 0 0 10px rgba(0, 200, 255, 0.3);
+            background-color: var(--dialog-bg);
+            position: relative; /* For absolute positioning of avatar/score */
+        }
+
+        .screen {
+            padding: 20px;
+            min-height: 400px; /* Adjust as needed */
+            display: none; /* Hidden by default */
+        }
+
+        .screen.active {
+            display: block;
+        }
+
+        h1, h2, h3 {
+            color: var(--accent-color);
+            margin-bottom: 15px;
+            text-align: center;
+        }
+        h1 { font-size: 1.8em; }
+        h2 { font-size: 1.4em; }
+        h3 { font-size: 1.1em; }
+
+        p, li {
+            font-size: 0.8em;
+            line-height: 1.6;
+            margin-bottom: 10px;
+        }
+        a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .pixel-button {
+            font-family: 'Press Start 2P', cursive;
+            background-color: var(--button-bg);
+            color: var(--primary-text);
+            border: 2px solid var(--border-color);
+            padding: 10px 15px;
+            cursor: pointer;
+            text-transform: uppercase;
+            font-size: 0.9em;
+            display: inline-block;
+            margin-top: 10px;
+            box-shadow: 2px 2px 0px var(--border-color);
+            transition: transform 0.1s, box-shadow 0.1s;
+        }
+
+        .pixel-button:hover {
+            background-color: var(--button-hover-bg);
+            transform: translate(1px, 1px);
+            box-shadow: 1px 1px 0px var(--border-color);
+        }
+        .pixel-button:active {
+            transform: translate(2px, 2px);
+            box-shadow: none;
+        }
+
+        /* Start Screen Specific */
+        #start-screen {
+            text-align: center;
+        }
+        #start-screen h1 {
+            font-size: 2.5em; /* Larger title */
+            margin-bottom: 30px;
+        }
+        .flashing {
+            animation: flash 1s infinite;
+        }
+        @keyframes flash {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.3; }
+        }
+
+        /* Navigation (World Map) */
+        #world-map nav {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        /* Game Stats (XP) */
+        .game-stats {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 0.8em;
+            color: var(--accent-color);
+            background-color: rgba(0,0,0,0.5);
+            padding: 5px 10px;
+            border: 1px solid var(--border-color);
+        }
+
+        /* Project Item styling */
+        .project-item {
+            border: 2px solid var(--border-color);
+            padding: 15px;
+            margin-bottom: 20px;
+            background-color: rgba(0,0,0,0.2);
+        }
+        .project-item h3 {
+            text-align: left;
+            margin-top: 0;
+        }
+        .project-item .tech-stack {
+            font-size: 0.7em;
+            color: var(--accent-color);
+            margin-top: 5px;
+            font-style: italic;
+        }
+        .project-item .tech-stack strong {
+            color: var(--primary-text);
+        }
+
+        /* Skills list */
+        .skills-list {
+            list-style: none;
+            padding-left: 0;
+        }
+        .skills-list li {
+            padding: 5px 0;
+            border-bottom: 1px dashed var(--border-color);
+        }
+        .skills-list li:last-child {
+            border-bottom: none;
+        }
+        .skills-list li::before {
+            content: ">> "; /* RPG-style bullet */
+            color: var(--accent-color);
+        }
+
+        /* Simple Avatar placeholder */
+        .avatar-placeholder {
+            width: 50px;
+            height: 50px;
+            background-color: var(--accent-color); /* Placeholder color */
+            border: 2px solid var(--primary-text);
+            margin: 10px auto 20px;
+            /* In a real scenario, this would be an <img> or a div with a background-image */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 0.7em;
+        }
+        .avatar-placeholder::after {
+            content: "Me"; /* Simple text for placeholder */
+        }
+
+        /* Contact Form (basic styling) */
+        .contact-form label {
+            display: block;
+            margin-bottom: 5px;
+            font-size: 0.8em;
+        }
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            background-color: var(--primary-bg);
+            border: 1px solid var(--border-color);
+            color: var(--primary-text);
+            font-family: 'Press Start 2P', cursive;
+            font-size: 0.7em;
+        }
+        .contact-form textarea {
+            min-height: 100px;
+        }
+
+        /* Easter Egg message */
+        .easter-egg-message {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: var(--dialog-bg);
+            border: 3px solid var(--accent-color);
+            padding: 30px;
+            color: var(--primary-text);
+            text-align: center;
+            z-index: 1000;
+            box-shadow: 0 0 20px var(--accent-color);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="game-container">
+        <div class="game-stats">XP: <span id="xp-score">0</span></div>
+
+        <!-- Start Screen -->
+        <div id="start-screen" class="screen active">
+            <h1>PIXEL QUEST</h1>
+            <p>[YOUR NAME]'S PORTFOLIO ADVENTURE</p>
+            <div class="avatar-placeholder"></div>
+            <button class="pixel-button flashing" onclick="navigateTo('world-map')">Press Start</button>
+            <p style="font-size: 0.6em; margin-top: 30px;">Hint: Try the Konami Code!</p>
+        </div>
+
+        <!-- World Map (Navigation) -->
+        <div id="world-map" class="screen">
+            <h2>WORLD MAP</h2>
+            <p>Choose your destination, adventurer!</p>
+            <nav>
+                <button class="pixel-button" onclick="navigateTo('about-me')">The Guild Hall (About)</button>
+                <button class="pixel-button" onclick="navigateTo('skills')">The Armory (Skills)</button>
+                <button class="pixel-button" onclick="navigateTo('projects')">Completed Quests (Projects)</button>
+                <button class="pixel-button" onclick="navigateTo('contact')">Carrier Pigeon Post (Contact)</button>
+            </nav>
+        </div>
+
+        <!-- About Me (Guild Hall) -->
+        <div id="about-me" class="screen">
+            <h2>THE GUILD HALL</h2>
+            <h3>Character Bio: [Your Name]</h3>
+            <div class="avatar-placeholder"></div>
+            <p>Welcome, traveler! I am [Your Name], a seasoned [Your Role, e.g., Game Developer / Creative Coder] with X years of experience forging digital realms and crafting interactive experiences.</p>
+            <p>My journey began with a passion for [mention your passion], leading me to master the arts of [mention 1-2 key skills]. I thrive on challenges and seek to create memorable and engaging digital artifacts.</p>
+            <button class="pixel-button" onclick="navigateTo('world-map')">Back to Map</button>
+        </div>
+
+        <!-- Skills (The Armory) -->
+        <div id="skills" class="screen">
+            <h2>THE ARMORY</h2>
+            <h3>My Arsenal of Skills & Tools</h3>
+            <ul class="skills-list">
+                <li>JavaScript (Master Proficiency)</li>
+                <li>HTML5 & CSS3 (Expert Forging)</li>
+                <li>React / Vue / Angular (Enchanted Frameworks)</li>
+                <li>Node.js (Backend Sorcery)</li>
+                <li>Unity / Unreal Engine (Game World Weaving)</li>
+                <li>Git & GitHub (Version Control Scrolls)</li>
+                <li>Pixel Art / Aseprite (Aesthetic Crafting)</li>
+            </ul>
+            <button class="pixel-button" onclick="navigateTo('world-map')">Back to Map</button>
+        </div>
+
+        <!-- Projects (Completed Quests) -->
+        <div id="projects" class="screen">
+            <h2>COMPLETED QUESTS</h2>
+            <p>Behold, the chronicles of my past adventures!</p>
+
+            <div class="project-item">
+                <h3>Project Alpha: The Dragon's Hoard (Website)</h3>
+                <p>A legendary quest to build an e-commerce platform for mystical artifacts. Features included user authentication, product listings, and a secure checkout rune.</p>
+                <p class="tech-stack"><strong>Tech Used:</strong> React, Node.js, Express, MongoDB, Stripe API</p>
+                <a href="#" class="pixel-button" target="_blank">View Treasure (Live Demo)</a>
+                <a href="#" class="pixel-button" target="_blank">Examine Blueprints (GitHub)</a>
+            </div>
+
+            <div class="project-item">
+                <h3>Project Beta: Golem Constructor (Game)</h3>
+                <p>Forged a charming 2D puzzle game where players assemble golems to solve environmental challenges. Developed all art, mechanics, and level designs.</p>
+                <p class="tech-stack"><strong>Tech Used:</strong> Unity, C#, Aseprite</p>
+                <a href="#" class="pixel-button" target="_blank">Play Game</a>
+            </div>
+            <!-- Add more projects here -->
+            <button class="pixel-button" onclick="navigateTo('world-map')">Back to Map</button>
+        </div>
+
+        <!-- Contact (Carrier Pigeon Post) -->
+        <div id="contact" class="screen">
+            <h2>CARRIER PIGEON POST</h2>
+            <p>Send a message through the digital ether. I await your summons!</p>
+            <form class="contact-form" onsubmit="alert('Message sent (not really, this is a demo)!'); return false;">
+                <label for="name">Your Name:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Your Email Scroll:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="message">Your Missive:</label>
+                <textarea id="message" name="message" required></textarea>
+
+                <button type="submit" class="pixel-button">Dispatch Pigeon</button>
+            </form>
+            <button class="pixel-button" onclick="navigateTo('world-map')">Back to Map</button>
+        </div>
+
+        <!-- Easter Egg Message Area -->
+        <div id="easter-egg" class="easter-egg-message">
+            <h2>SECRET FOUND!</h2>
+            <p>You input the ancient code! <br> +100 GEEK CRED!</p>
+            <button class="pixel-button" onclick="document.getElementById('easter-egg').style.display = 'none';">Close</button>
+        </div>
+
+    </div>
+
+    <script>
+        let currentScreen = 'start-screen';
+        let xpScore = 0;
+        const visitedSections = new Set(); // To award XP only once per section
+
+        function navigateTo(screenId) {
+            // Hide current screen
+            document.getElementById(currentScreen).classList.remove('active');
+
+            // Show new screen
+            document.getElementById(screenId).classList.add('active');
+            currentScreen = screenId;
+
+            // Add XP for visiting a new section (except start or map)
+            if (screenId !== 'start-screen' && screenId !== 'world-map' && !visitedSections.has(screenId)) {
+                xpScore += 10; // Award 10 XP per new section
+                document.getElementById('xp-score').textContent = xpScore;
+                visitedSections.add(screenId);
+            }
+
+            // Simple "loading" effect (optional)
+            // console.log(`Loading ${screenId}...`); // You could show a temp message
+        }
+
+        // Konami Code Easter Egg
+        const konamiCode = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'b', 'a'];
+        let konamiIndex = 0;
+        document.addEventListener('keydown', function(e) {
+            if (e.key.toLowerCase() === konamiCode[konamiIndex].toLowerCase()) {
+                konamiIndex++;
+                if (konamiIndex === konamiCode.length) {
+                    document.getElementById('easter-egg').style.display = 'block';
+                    xpScore += 100; // Bonus XP!
+                    document.getElementById('xp-score').textContent = xpScore;
+                    konamiIndex = 0; // Reset for next time
+                }
+            } else {
+                konamiIndex = 0; // Reset if wrong key
+            }
+        });
+
+        // Initialize: Show start screen (already handled by 'active' class in HTML)
+    </script>
+</body>
+</html>

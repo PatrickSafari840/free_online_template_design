@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Name - Dev Portfolio & Blog</title>
+    <link rel="stylesheet" href="style5.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Merriweather:wght@400;700&family=Montserrat:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">Your Name</div>
+            <nav>
+                <ul>
+                    <li><a href="index5.html" class="active">Home</a></li>
+                    <!-- replace the link of index5.html with the actual blog page -->
+                    <li><a href="index5.html">Blog</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>Code, Create, Share.</h1>
+            <p class="subtitle">Exploring the world of development, one post and project at a time.</p>
+            <a href="index5.html" class="btn btn-primary">Read the Blog</a>
+            <a href="projects.html" class="btn btn-secondary">View Projects</a>
+        </div>
+    </section>
+
+    <main class="container">
+        <section id="latest-posts">
+            <h2>Latest Insights</h2>
+            <div class="post-grid">
+                <!-- Sample Post Card 1 -->
+                <article class="post-card">
+                    <img src="img/placeholder-blog1.jpg" alt="Blog post thumbnail">
+                    <div class="post-card-content">
+                        <span class="post-category">Tutorial</span>
+                        <h3><a href="single-post.html">Mastering Async/Await in JavaScript</a></h3>
+                        <p>A deep dive into asynchronous JavaScript and how async/await simplifies your code...</p>
+                        <a href="single-post.html" class="read-more">Read More →</a>
+                    </div>
+                </article>
+                <!-- Sample Post Card 2 -->
+                <article class="post-card">
+                    <img src="img/placeholder-blog2.jpg" alt="Blog post thumbnail">
+                    <div class="post-card-content">
+                        <span class="post-category">Project Breakdown</span>
+                        <h3><a href="single-post.html">Building My Portfolio with HTML & CSS</a></h3>
+                        <p>How I approached the design and development of this very website, focusing on CSS Grid...</p>
+                        <a href="single-post.html" class="read-more">Read More →</a>
+                    </div>
+                </article>
+                <!-- Sample Post Card 3 -->
+                <article class="post-card">
+                    <img src="img/placeholder-blog3.jpg" alt="Blog post thumbnail">
+                    <div class="post-card-content">
+                        <span class="post-category">Industry Trends</span>
+                        <h3><a href="single-post.html">The Rise of Serverless Architectures</a></h3>
+                        <p>Exploring the benefits and challenges of serverless and its impact on modern web development...</p>
+                        <a href="single-post.html" class="read-more">Read More →</a>
+                    </div>
+                </article>
+            </div>
+            <div class="text-center">
+                <a href="blog.html" class="btn">View All Posts</a>
+            </div>
+        </section>
+
+        <section id="featured-projects">
+            <h2>Featured Projects</h2>
+            <div class="project-grid">
+                <!-- Sample Project Card 1 -->
+                <div class="project-card">
+                    <img src="img/placeholder-project1.jpg" alt="Project thumbnail">
+                    <h3><a href="single-project.html">E-commerce Platform</a></h3>
+                    <p>A full-stack e-commerce website built with React and Node.js.</p>
+                    <div class="project-tags">
+                        <span>React</span><span>Node.js</span><span>MongoDB</span>
+                    </div>
+                    <a href="single-project.html" class="btn btn-secondary">View Details</a>
+                </div>
+                <!-- Sample Project Card 2 -->
+                <div class="project-card">
+                    <img src="img/placeholder-project2.jpg" alt="Project thumbnail">
+                    <h3><a href="single-project.html">Task Management App</a></h3>
+                    <p>A sleek and intuitive task manager using Vue.js and Firebase.</p>
+                    <div class="project-tags">
+                        <span>Vue.js</span><span>Firebase</span><span>PWA</span>
+                    </div>
+                    <a href="single-project.html" class="btn btn-secondary">View Details</a>
+                </div>
+            </div>
+             <div class="text-center">
+                <a href="projects.html" class="btn">View All Projects</a>
+            </div>
+        </section>
+
+        <section id="about">
+            <h2>About Me</h2>
+            <div class="about-content">
+                <img src="img/profile-placeholder.jpg" alt="Your Name" class="profile-pic">
+                <div>
+                    <p>Hi, I'm [Your Name], a passionate [Your Role - e.g., Full-Stack Developer] with a love for creating elegant solutions and sharing knowledge. I believe in the power of continuous learning and enjoy exploring new technologies.</p>
+                    <p>This blog is my space to document my journey, share insights, and connect with fellow developers. When I'm not coding, you can find me [Your Hobby].</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer id="contact">
+        <div class="container">
+            <p>© <span id="year"></span> Your Name. All Rights Reserved.</p>
+            <p>
+                <a href="mailto:your.email@example.com">Email</a> |
+                <a href="https://github.com/yourusername" target="_blank">GitHub</a> |
+                <a href="https://linkedin.com/in/yourusername" target="_blank">LinkedIn</a>
+            </p>
+        </div>
+    </footer>
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project: E-commerce Platform - Your Name</title> <!-- Title will be dynamic ideally -->
+    <link rel="stylesheet" href="style5.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Merriweather:wght@400;700&family=Montserrat:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">Your Name</div>
+            <nav>
+                <ul>
+                    <li><a href="index5.html">Home</a></li>
+                    <!-- replace the link of index5.html with the actual blog page -->
+                    <li><a href="index5.html">Blog</a></li>
+                    <li><a href="projects.html" class="active">Projects</a></li>
+                    <li><a href="inde5x.html#about">About</a></li>
+                    <li><a href="inde5x.html#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <article class="single-project-content">
+            <header class="project-header">
+                <h1>E-commerce Platform</h1> <!-- This would be dynamic -->
+                <p class="project-subtitle">A full-stack e-commerce solution with modern features.</p>
+                <img src="img/placeholder-project1-large.jpg" alt="E-commerce Platform Showcase" class="project-featured-image">
+            </header>
+
+            <div class="project-details-grid">
+                <div class="project-description">
+                    <h2>Project Overview</h2>
+                    <p>This E-commerce Platform was developed to provide a seamless online shopping experience. It includes features like user authentication, product catalog browsing, search functionality, a shopping cart, and a secure checkout process. The goal was to build a robust and scalable application using modern web technologies.</p>
+
+                    <h2>Key Features</h2>
+                    <ul>
+                        <li>User registration and login</li>
+                        <li>Product listing with filtering and sorting</li>
+                        <li>Detailed product pages</li>
+                        <li>Shopping cart functionality</li>
+                        <li>Simulated payment gateway integration</li>
+                        <li>Admin panel for product management (conceptual)</li>
+                    </ul>
+
+                    <h2>Technologies Used</h2>
+                    <p>The tech stack was chosen for its scalability and developer experience:</p>
+                    <div class="project-tags tech-stack-tags">
+                        <span>React</span><span>Redux</span><span>Node.js</span><span>Express.js</span><span>MongoDB</span><span>JWT</span><span>Stripe API (Test Mode)</span>
+                    </div>
+
+                    <h2>Challenges & Solutions</h2>
+                    <p>One major challenge was managing state effectively across the application, especially for the shopping cart. Redux was implemented to handle global state. Another challenge was ensuring secure authentication, for which JWT (JSON Web Tokens) were used.</p>
+
+                     <!-- KEY ELEMENT: Link to relevant blog posts -->
+                    <div class="related-blog-posts">
+                        <h3>Related Blog Posts:</h3>
+                        <ul>
+                            <li><a href="single-post.html?slug=building-ecommerce-part1">Building an E-commerce Site Part 1: Backend Setup with Node.js</a></li>
+                            <li><a href="single-post.html?slug=react-state-management-ecommerce">Managing State in React for E-commerce Apps</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <aside class="project-meta-info">
+                    <div class="widget">
+                        <h3>Project Info</h3>
+                        <p><strong>Date:</strong> August 2023</p>
+                        <p><strong>Role:</strong> Full-Stack Developer (Solo)</p>
+                        <p><strong>Status:</strong> Completed / In Development</p>
+                    </div>
+                    <div class="widget project-links">
+                        <h3>Links</h3>
+                        <a href="#" class="btn btn-primary" target="_blank">Live Demo</a>
+                        <a href="#" class="btn btn-secondary" target="_blank">View Code (GitHub)</a>
+                    </div>
+                    <div class="widget">
+                        <h3>Screenshots</h3>
+                        <div class="project-gallery">
+                            <img src="img/placeholder-project1-thumb1.jpg" alt="Screenshot 1">
+                            <img src="img/placeholder-project1-thumb2.jpg" alt="Screenshot 2">
+                            <img src="img/placeholder-project1-thumb3.jpg" alt="Screenshot 3">
+                        </div>
+                    </div>
+                </aside>
+            </div>
+        </article>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>© <span id="year"></span> Your Name. All Rights Reserved.</p>
+             <p>
+                <a href="mailto:your.email@example.com">Email</a> |
+                <a href="https://github.com/yourusername" target="_blank">GitHub</a> |
+                <a href="https://linkedin.com/in/yourusername" target="_blank">LinkedIn</a>
+            </p>
+        </div>
+    </footer>
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+        // In a real app, you'd fetch project data based on URL param (e.g., ?id=project1)
+        // and dynamically populate the page. This is a static example.
+    </script>
+</body>
+</html>

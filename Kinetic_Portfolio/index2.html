@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-T">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kinetic Portfolio - [Your Name]</title>
+    <link rel="stylesheet" href="style2.css">
+    <!-- Font Awesome for Icons (optional, or use SVGs) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts (Example: Montserrat & Inter) -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body class="dark-theme"> <!-- Default to dark theme -->
+
+    <!-- Custom Cursor (handled by JS) -->
+    <div class="custom-cursor"></div>
+
+    <header>
+        <nav>
+            <div class="logo">[Your Logo/Name]</div>
+            <ul>
+                <li><a href="#hero">Home</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <button id="theme-toggle" aria-label="Toggle theme">
+                <i class="fas fa-sun"></i> <!-- Icon will change with JS -->
+            </button>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="hero" class="hero-section">
+            <div class="hero-video-bg">
+                <!-- Placeholder for background video or animation -->
+                <!-- <video autoplay muted loop playsinline id="heroVideo">
+                    <source src="assets/your-bg-video.mp4" type="video/mp4">
+                </video> -->
+                <div class="hero-particles"></div> <!-- For JS particle animation -->
+            </div>
+            <div class="hero-content">
+                <h1 class="animate-on-scroll">Hi, I'm [Your Name].</h1>
+                <p class="animate-on-scroll" style="animation-delay: 0.2s;">I craft <span class="highlight">dynamic</span> digital experiences.</p>
+                <div class="hero-cta animate-on-scroll" style="animation-delay: 0.4s;">
+                    <a href="#projects" class="btn btn-primary">View My Work</a>
+                    <a href="#contact" class="btn btn-secondary">Get In Touch</a>
+                </div>
+            </div>
+            <a href="#projects" class="scroll-down-indicator" aria-label="Scroll to projects">
+                <i class="fas fa-chevron-down"></i>
+            </a>
+        </section>
+
+        <!-- About Section (Optional) -->
+        <section id="about" class="about-section content-section">
+            <h2 class="section-title animate-on-scroll">About Me</h2>
+            <p class="animate-on-scroll">A passionate frontend developer focused on creating intuitive and engaging user interfaces. I love bringing ideas to life with clean code and delightful interactions...</p>
+            <!-- Add more content here -->
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="projects-section content-section">
+            <h2 class="section-title animate-on-scroll">My Work</h2>
+            <div class="project-grid">
+                <!-- Project Card 1 -->
+                <div class="project-card animate-on-scroll">
+                    <div class="project-thumbnail">
+                        <img src="https://via.placeholder.com/400x300?text=Project+1" alt="Project 1 Thumbnail">
+                        <div class="project-overlay">
+                            <a href="#" class="btn-view-project">View Project</a>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>Project Title One</h3>
+                        <p>A brief description of this awesome project.</p>
+                        <div class="tech-stack">
+                            <span>React</span><span>Node.js</span><span>SCSS</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project Card 2 -->
+                <div class="project-card animate-on-scroll" style="animation-delay: 0.1s;">
+                     <div class="project-thumbnail">
+                        <img src="https://via.placeholder.com/400x300?text=Project+2" alt="Project 2 Thumbnail">
+                         <div class="project-overlay">
+                            <a href="#" class="btn-view-project">View Project</a>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>Project Title Two</h3>
+                        <p>Another amazing creation showcasing UI/UX skills.</p>
+                         <div class="tech-stack">
+                            <span>Vue</span><span>Firebase</span><span>Tailwind</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Add more project cards -->
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="skills-section content-section">
+            <h2 class="section-title animate-on-scroll">My Arsenal</h2>
+            <div class="skills-container">
+                <div class="skill-item animate-on-scroll">
+                    <div class="skill-info">
+                        <span>HTML5</span><span>95%</span>
+                    </div>
+                    <div class="skill-bar-container">
+                        <div class="skill-bar" data-level="95"></div>
+                    </div>
+                </div>
+                <div class="skill-item animate-on-scroll" style="animation-delay: 0.1s;">
+                    <div class="skill-info">
+                        <span>CSS3 & SCSS</span><span>90%</span>
+                    </div>
+                    <div class="skill-bar-container">
+                        <div class="skill-bar" data-level="90"></div>
+                    </div>
+                </div>
+                <div class="skill-item animate-on-scroll" style="animation-delay: 0.2s;">
+                    <div class="skill-info">
+                        <span>JavaScript (ES6+)</span><span>85%</span>
+                    </div>
+                    <div class="skill-bar-container">
+                        <div class="skill-bar" data-level="85"></div>
+                    </div>
+                </div>
+                <div class="skill-item animate-on-scroll" style="animation-delay: 0.3s;">
+                    <div class="skill-info">
+                        <span>React / Vue</span><span>80%</span>
+                    </div>
+                    <div class="skill-bar-container">
+                        <div class="skill-bar" data-level="80"></div>
+                    </div>
+                </div>
+                <!-- Add more skills -->
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact-section content-section">
+            <h2 class="section-title animate-on-scroll">Let's Connect</h2>
+            <form id="contact-form" class="contact-form animate-on-scroll">
+                <div class="form-group">
+                    <input type="text" id="name" name="name" required>
+                    <label for="name">Your Name</label>
+                </div>
+                <div class="form-group">
+                    <input type="email" id="email" name="email" required>
+                    <label for="email">Your Email</label>
+                </div>
+                <div class="form-group">
+                    <textarea id="message" name="message" rows="5" required></textarea>
+                    <label for="message">Your Message</label>
+                </div>
+                <button type="submit" class="btn btn-primary">Send Message</button>
+            </form>
+            <div class="social-links animate-on-scroll" style="animation-delay: 0.2s;">
+                <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="#" aria-label="Github"><i class="fab fa-github"></i></a>
+                <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© <span id="current-year"></span> [Your Name]. Crafted with <i class="fas fa-heart"></i> & <i class="fas fa-code"></i>.</p>
+    </footer>
+
+    <script src="script2.js"></script>
+</body>
+</html>

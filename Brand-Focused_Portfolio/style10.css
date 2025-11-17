@@ -1,0 +1,485 @@
+/* --- CSS Variables (Your Brand Customization) --- */
+:root {
+    --primary-color: #00A99D; /* Teal - Main brand color */
+    --secondary-color: #FF6B6B; /* Coral - Accent */
+    --dark-neutral: #2C3E50;   /* Charcoal - Text, dark backgrounds */
+    --light-neutral: #F8F9FA;  /* Off-white - Light backgrounds */
+    --text-color-light: #F8F9FA; /* For text on dark backgrounds */
+    --text-color-dark: #333;    /* For text on light backgrounds */
+
+    --font-heading: 'Poppins', sans-serif;
+    --font-body: 'Open Sans', sans-serif;
+
+    --container-width: 1100px;
+    --border-radius: 8px;
+    --box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    --transition-speed: 0.3s ease;
+}
+
+/* --- Global Resets & Base Styles --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-body);
+    line-height: 1.7;
+    color: var(--text-color-dark);
+    background-color: var(--light-neutral);
+    font-size: 16px; /* Base font size */
+}
+
+.container {
+    width: 90%;
+    max-width: var(--container-width);
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    color: var(--dark-neutral);
+    margin-bottom: 1rem;
+}
+
+h1 { font-size: 3rem; line-height: 1.2; }
+h2 { font-size: 2.2rem; margin-bottom: 1.5rem; }
+h3 { font-size: 1.5rem; }
+
+p {
+    margin-bottom: 1rem;
+}
+
+a {
+    text-decoration: none;
+    color: var(--primary-color);
+    transition: color var(--transition-speed);
+}
+
+a:hover {
+    color: var(--secondary-color);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+section {
+    padding: 80px 0;
+}
+
+.dark-section {
+    background-color: var(--dark-neutral);
+    color: var(--text-color-light);
+}
+
+.dark-section h2, .dark-section h3 {
+    color: var(--text-color-light);
+}
+.dark-section p {
+    color: #bdc3c7; /* Lighter gray for p on dark */
+}
+
+.brand-highlight {
+    color: var(--primary-color);
+}
+
+.icon-highlight {
+    color: var(--primary-color);
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+/* --- Header & Navigation --- */
+#main-header {
+    background-color: #fff;
+    padding: 15px 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+    transition: top 0.3s;
+}
+
+#main-header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+#personal-logo-text {
+    font-family: var(--font-heading);
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--dark-neutral);
+    margin-right: 10px;
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: var(--border-radius);
+    text-align: center;
+    line-height: 40px;
+}
+#personal-logo-text:hover {
+    background-color: var(--secondary-color);
+}
+
+.logo-name {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--dark-neutral);
+}
+
+
+#main-nav ul {
+    list-style: none;
+    display: flex;
+}
+
+#main-nav ul li {
+    margin-left: 25px;
+}
+
+#main-nav ul li a {
+    font-family: var(--font-body);
+    font-weight: 700;
+    color: var(--dark-neutral);
+    padding: 5px 0;
+    position: relative;
+}
+
+#main-nav ul li a::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--primary-color);
+    transition: width var(--transition-speed);
+}
+
+#main-nav ul li a:hover::after,
+#main-nav ul li a.active::after {
+    width: 100%;
+}
+
+#mobile-menu-toggle {
+    display: none; /* Hidden by default, shown on mobile */
+    background: none;
+    border: none;
+    color: var(--dark-neutral);
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+/* --- Hero Section --- */
+#hero {
+    background: linear-gradient(rgba(44, 62, 80, 0.7), rgba(44, 62, 80, 0.7)), url('https://via.placeholder.com/1920x1080.png?text=Cool+Background+Image') no-repeat center center/cover;
+    /* Replace placeholder with your actual background image */
+    color: var(--text-color-light);
+    height: 100vh;
+    min-height: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding-top: 80px; /* Account for fixed header */
+}
+
+#hero h1 {
+    color: var(--text-color-light);
+    font-size: 3.5rem; /* Larger for hero */
+    margin-bottom: 0.5rem;
+}
+
+#hero .subtitle {
+    font-size: 1.3rem;
+    margin-bottom: 2rem;
+    color: #ecf0f1; /* Lighter text for subtitle */
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.cta-button {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: #fff;
+    padding: 12px 30px;
+    border-radius: var(--border-radius);
+    font-family: var(--font-heading);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: background-color var(--transition-speed), transform var(--transition-speed);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.cta-button:hover {
+    background-color: var(--secondary-color);
+    color: #fff;
+    transform: translateY(-3px);
+}
+
+/* --- About Me Section --- */
+#about .about-content {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+#about .about-text {
+    flex: 2;
+}
+
+#about .about-image {
+    flex: 1;
+    text-align: center;
+}
+
+#professional-headshot {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 50%; /* Circular headshot */
+    border: 5px solid var(--primary-color);
+    box-shadow: var(--box-shadow);
+}
+
+/* --- Why Me? Section (UVP) --- */
+#why-me h2 {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+.uvp-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    text-align: center;
+}
+
+.uvp-item {
+    background-color: #34495e; /* Slightly lighter than section bg */
+    padding: 30px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    transition: transform var(--transition-speed);
+}
+.uvp-item:hover {
+    transform: translateY(-5px);
+}
+
+.uvp-summary {
+    text-align: center;
+    font-size: 1.1rem;
+    margin-top: 3rem;
+    font-style: italic;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.uvp-summary strong {
+    color: var(--primary-color);
+}
+
+
+/* --- Projects Section --- */
+#projects h2 {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+}
+
+.project-card {
+    background-color: #fff;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    overflow: hidden; /* To contain image */
+    transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+    display: flex;
+    flex-direction: column;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.project-card img {
+    width: 100%;
+    height: 200px; /* Or adjust as needed */
+    object-fit: cover;
+}
+
+.project-info {
+    padding: 20px;
+    flex-grow: 1; /* Allows info to take remaining space */
+    display: flex;
+    flex-direction: column;
+}
+
+.project-info h3 {
+    color: var(--dark-neutral);
+    margin-bottom: 0.5rem;
+}
+
+.project-tags {
+    margin: 10px 0;
+}
+
+.project-tags span {
+    background-color: var(--light-neutral);
+    color: var(--primary-color);
+    font-size: 0.8rem;
+    padding: 4px 8px;
+    border-radius: 4px;
+    margin-right: 5px;
+    display: inline-block;
+    margin-bottom: 5px;
+}
+
+.project-links {
+    margin-top: auto; /* Pushes links to the bottom */
+    padding-top: 10px;
+}
+
+.project-link {
+    font-size: 0.9rem;
+    margin-right: 15px;
+    font-weight: bold;
+}
+.project-link i {
+    margin-left: 5px;
+}
+
+/* --- Contact Section --- */
+#contact {
+    text-align: center;
+}
+
+#contact .cta-button {
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+}
+
+.social-links a {
+    color: var(--text-color-light);
+    font-size: 1.8rem;
+    margin: 0 15px;
+    transition: color var(--transition-speed);
+}
+
+.social-links a:hover {
+    color: var(--primary-color);
+}
+
+/* --- Footer --- */
+footer {
+    background-color: var(--dark-neutral);
+    color: var(--text-color-light);
+    text-align: center;
+    padding: 30px 0;
+    font-size: 0.9rem;
+}
+footer p {
+    margin-bottom: 0.5rem;
+    color: #bdc3c7;
+}
+footer .brand-highlight {
+    color: var(--secondary-color); /* Use accent for heart */
+}
+
+/* --- Responsive Design --- */
+@media (max-width: 768px) {
+    h1 { font-size: 2.5rem; }
+    #hero h1 { font-size: 2.8rem; }
+    h2 { font-size: 1.8rem; }
+
+    #main-header .container {
+        position: relative; /* For mobile menu positioning */
+    }
+
+    #main-nav {
+        display: none; /* Hide nav by default */
+        position: absolute;
+        top: 100%; /* Position below header */
+        left: 0;
+        width: 100%;
+        background-color: #fff;
+        box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+        border-top: 1px solid #eee;
+    }
+
+    #main-nav.active {
+        display: block; /* Show when active */
+    }
+
+    #main-nav ul {
+        flex-direction: column;
+    }
+
+    #main-nav ul li {
+        margin: 0;
+        text-align: center;
+    }
+
+    #main-nav ul li a {
+        display: block;
+        padding: 15px;
+        border-bottom: 1px solid #eee;
+    }
+     #main-nav ul li a::after {
+        display: none; /* No underline on mobile nav items */
+    }
+
+
+    #mobile-menu-toggle {
+        display: block; /* Show hamburger icon */
+    }
+
+    #about .about-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    #about .about-image {
+        margin-top: 30px;
+        order: -1; /* Move image above text on mobile */
+    }
+    #professional-headshot {
+        width: 200px;
+        height: 200px;
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 480px) {
+    #hero h1 { font-size: 2.2rem; }
+    #hero .subtitle { font-size: 1rem; }
+    .cta-button { padding: 10px 20px; font-size: 0.9rem; }
+    .logo-name { display: none; } /* Hide name next to logo on very small screens */
+}

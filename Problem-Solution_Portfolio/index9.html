@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Name - Problem-Solution Portfolio</title>
+    <link rel="stylesheet" href="style9.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <h1>Your Name</h1>
+            <p class="tagline">Solving Complex Problems with Elegant Solutions</p>
+            <nav>
+                <ul>
+                    <li><a href="#about">About Me</a></li>
+                    <li><a href="#projects">My Work</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="hero" class="hero-section">
+            <div class="container">
+                <div class="hero-content">
+                    <h2>I turn challenges into opportunities.</h2>
+                    <p>As a backend developer, I specialize in crafting robust, scalable, and efficient solutions that directly address your business's most pressing technical problems.</p>
+                    <a href="#projects" class="button primary">See My Solutions</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="about-section">
+            <div class="container">
+                <h2>About Me</h2>
+                <div class="about-content">
+                    <img src="img/your-photo.jpg" alt="Your Photo" class="profile-photo">
+                    <p>I'm a passionate problem-solver with X years of experience in [Your Primary Field, e.g., backend development, product engineering]. My approach centers on understanding the root cause of an issue, designing a targeted strategy, and implementing solutions that deliver measurable impact. I thrive on critical thinking and building systems that are not just functional, but also resilient and future-proof. My expertise lies in [mention 2-3 key tech stacks/areas, e.g., Python, Node.js, AWS, database optimization].</p>
+                    <p>Beyond coding, I believe in clear communication and collaborative teamwork to ensure project success. Let's build something great together.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="projects-section">
+            <div class="container">
+                <h2>My Work: Problems Solved, Results Delivered</h2>
+                <div class="project-grid">
+
+                    <article class="project-card">
+                        <h3>E-commerce Platform Scalability Enhancement</h3>
+                        <p class="project-summary">Revamped a struggling e-commerce platform to handle high traffic, eliminating downtime during peak sales.</p>
+                        <div class="project-details">
+                            <h4>The Problem</h4>
+                            <p>The client's existing e-commerce platform was experiencing frequent crashes during peak sales periods (e.g., Black Friday), leading to an estimated **15% loss in potential revenue** due to abandoned carts and frustrated customers. Manual inventory tracking also caused stockouts and overstocking.</p>
+
+                            <h4>My Solution</h4>
+                            <p>After a thorough system audit, I identified bottlenecks in database queries and inefficient server configurations. I implemented a caching mechanism using **Redis**, optimized database indexes, and migrated the platform to a scalable **microservices architecture on AWS (EC2, RDS)**. For inventory, I developed a real-time tracking system integrating with their POS, triggering automated reorder alerts using **Node.js** and **PostgreSQL**.</p>
+
+                            <h4>Measurable Results</h4>
+                            <ul>
+                                <li>Platform uptime increased to **99.9%**, eliminating peak-time crashes.</li>
+                                <li>Page load times reduced by **40%**, contributing to a **10% increase in conversion rates**.</li>
+                                <li>Automated inventory system reduced stockouts by **80%** and streamlined order fulfillment by **30%**.</li>
+                                <li>Overall operational costs decreased by **5%**.</li>
+                            </ul>
+
+                            <h4>Client Testimonial</h4>
+                            <blockquote class="testimonial">
+                                "Prior to working with [Your Name], our e-commerce site was a constant source of frustration. [Your Name] not only identified the root cause of our scalability issues but implemented a solution that has completely transformed our operations. We've seen a remarkable increase in stability and conversions, directly impacting our bottom line. Highly recommend!" - <cite>Jane Doe, CTO of RetailCo</cite>
+                            </blockquote>
+
+                            <p class="technologies-used">Technologies: Node.js, Express, AWS (EC2, S3, RDS), Redis, PostgreSQL, Git, Docker</p>
+                        </div>
+                    </article>
+
+                    <article class="project-card">
+                        <h3>Automated Customer Support Ticket Routing</h3>
+                        <p class="project-summary">Developed an intelligent system to automatically route customer support tickets, reducing response times.</p>
+                        <div class="project-details">
+                            <h4>The Problem</h4>
+                            <p>The client's customer support team was overwhelmed by a high volume of undifferentiated tickets, leading to **average response times of over 24 hours** and significant agent burnout. Tickets often landed with the wrong department, requiring manual re-routing.</p>
+
+                            <h4>My Solution</h4>
+                            <p>I designed and implemented a machine learning-powered **ticket classification system** using **Python (scikit-learn)** and natural language processing (NLP) to analyze ticket content. This system automatically routes tickets to the most appropriate department or agent, integrating with their existing CRM via a **RESTful API**.</p>
+
+                            <h4>Measurable Results</h4>
+                            <ul>
+                                <li>Average ticket response time reduced by **60% (from 24+ hours to less than 10 hours)**.</li>
+                                <li>Agent workload re-distribution improved efficiency by **25%**.</li>
+                                <li>Customer satisfaction scores (CSAT) increased by **15%**.</li>
+                            </ul>
+
+                            <h4>Client Testimonial</h4>
+                            <blockquote class="testimonial">
+                                "The automated routing system built by [Your Name] has been a game-changer for our support team. Tickets are now handled much faster, and our agents can focus on solving problems instead of sorting them. An invaluable improvement!" - <cite>John Smith, Head of Customer Service at TechSolutions</cite>
+                            </blockquote>
+                            <p class="technologies-used">Technologies: Python, Flask, scikit-learn, NLTK, PostgreSQL, RESTful API Design</p>
+                        </div>
+                    </article>
+
+                    </div>
+            </div>
+        </section>
+
+        <section id="contact" class="contact-section">
+            <div class="container">
+                <h2>Let's Solve Your Next Challenge</h2>
+                <p>Have a problem that needs a robust solution? I'm ready to help.</p>
+                <form action="YOUR_FORM_SUBMISSION_ENDPOINT" method="POST">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Your Message / Problem</label>
+                        <textarea id="message" name="message" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="button primary">Send Message</button>
+                </form>
+                <div class="social-links">
+                    <a href="https://linkedin.com/in/yourprofile" target="_blank" aria-label="LinkedIn"><img src="img/linkedin-icon.svg" alt="LinkedIn"></a>
+                    <a href="https://github.com/yourprofile" target="_blank" aria-label="GitHub"><img src="img/github-icon.svg" alt="GitHub"></a>
+                    </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Your Name. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script9.js"></script>
+</body>
+</html>

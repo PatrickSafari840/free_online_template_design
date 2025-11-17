@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects - Your Name</title>
+    <link rel="stylesheet" href="style5.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Merriweather:wght@400;700&family=Montserrat:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">Your Name</div>
+            <nav>
+                <ul>
+                    <li><a href="index5.html">Home</a></li>
+                    <!-- replace the link of index5.html with the actual blog page -->
+                    <li><a href="index5.html">Blog</a></li>
+                    <li><a href="projects.html" class="active">Projects</a></li>
+                    <li><a href="index5.html#about">About</a></li>
+                    <li><a href="index5.html#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <section id="all-projects">
+            <h1>My Projects</h1>
+            <p class="page-intro">Here's a selection of projects I've worked on, showcasing different skills and technologies. Many of these are discussed in more detail on my blog.</p>
+            <div class="project-grid">
+                <!-- Project Card 1 -->
+                <div class="project-card">
+                    <img src="img/placeholder-project1.jpg" alt="E-commerce Platform">
+                    <h3><a href="single-project.html?id=project1">E-commerce Platform</a></h3>
+                    <p>A full-stack e-commerce website built with React and Node.js, featuring product listings, cart, and checkout.</p>
+                    <div class="project-tags">
+                        <span>React</span><span>Node.js</span><span>MongoDB</span><span>Express</span>
+                    </div>
+                    <a href="single-project.html?id=project1" class="btn btn-secondary">View Details</a>
+                </div>
+                <!-- Project Card 2 -->
+                <div class="project-card">
+                    <img src="img/placeholder-project2.jpg" alt="Task Management App">
+                    <h3><a href="single-project.html?id=project2">Task Management App</a></h3>
+                    <p>A sleek and intuitive task manager using Vue.js and Firebase for real-time data synchronization.</p>
+                    <div class="project-tags">
+                        <span>Vue.js</span><span>Firebase</span><span>PWA</span>
+                    </div>
+                    <a href="single-project.html?id=project2" class="btn btn-secondary">View Details</a>
+                </div>
+                <!-- Project Card 3 -->
+                <div class="project-card">
+                    <img src="img/placeholder-project3.jpg" alt="Data Visualization Dashboard">
+                    <h3><a href="single-project.html?id=project3">Data Viz Dashboard</a></h3>
+                    <p>An interactive dashboard for visualizing complex datasets using D3.js and Python (Flask) backend.</p>
+                    <div class="project-tags">
+                        <span>D3.js</span><span>Python</span><span>Flask</span><span>Data</span>
+                    </div>
+                    <a href="single-project.html?id=project3" class="btn btn-secondary">View Details</a>
+                </div>
+                 <!-- Project Card 4 -->
+                <div class="project-card">
+                    <img src="img/placeholder-project4.jpg" alt="This Portfolio Website">
+                    <h3><a href="single-project.html?id=project4">This Portfolio Website</a></h3>
+                    <p>My personal portfolio and blog, built with HTML, CSS, and a sprinkle of JavaScript. Focus on responsiveness and clean design.</p>
+                    <div class="project-tags">
+                        <span>HTML</span><span>CSS</span><span>JavaScript</span><span>Responsive</span>
+                    </div>
+                    <a href="single-project.html?id=project4" class="btn btn-secondary">View Details</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>© <span id="year"></span> Your Name. All Rights Reserved.</p>
+             <p>
+                <a href="mailto:your.email@example.com">Email</a> |
+                <a href="https://github.com/yourusername" target="_blank">GitHub</a> |
+                <a href="https://linkedin.com/in/yourusername" target="_blank">LinkedIn</a>
+            </p>
+        </div>
+    </footer>
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>

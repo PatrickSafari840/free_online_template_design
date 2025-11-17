@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mastering Async/Await in JavaScript - Your Name</title>
+    <link rel="stylesheet" href="style5.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Merriweather:wght@400;700&family=Montserrat:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">Your Name</div>
+            <nav>
+                <ul>
+                    <li><a href="index5.html">Home</a></li>
+                       <!-- replace the link of index5.html with the actual blog page -->
+                    <li><a href="index5.html">Blog</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="index5.html#about">About</a></li>
+                    <li><a href="index5.html#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <article class="single-post-content">
+            <header class="post-header">
+                <span class="post-category">Tutorial</span>
+                <h1>Mastering Async/Await in JavaScript</h1>
+                <p class="post-meta">
+                    Published on <time datetime="2023-10-26">October 26, 2023</time> by Your Name
+                </p>
+                <img src="img/placeholder-blog1-large.jpg" alt="Mastering Async/Await in JavaScript" class="post-featured-image">
+            </header>
+
+            <div class="post-body">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+
+                <h2>Understanding Promises</h2>
+                <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                <pre><code class="language-javascript">
+function fetchData() {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve("Data fetched!");
+    }, 1000);
+  });
+}
+                </code></pre>
+
+                <h2>Enter Async/Await</h2>
+                <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+                <pre><code class="language-javascript">
+async function processData() {
+  try {
+    const data = await fetchData();
+    console.log(data); // "Data fetched!"
+    // This technique was crucial for my <a href="single-project.html?id=projectX">Task Management App</a> project.
+  } catch (error) {
+    console.error("Error:", error);
+  }
+}
+
+processData();
+                </code></pre>
+                <p>Notice how we linked to the <a href="single-project.html?id=projectX">Task Management App</a>? This is a key element: linking projects from relevant blog posts.</p>
+
+                <h2>Error Handling</h2>
+                <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.</p>
+
+                <blockquote>
+                    "Async/await makes asynchronous code look and behave a bit more like synchronous code, which helps a lot with readability and maintainability."
+                </blockquote>
+
+                <p>Consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur? At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident.</p>
+
+                <!-- Placeholder for related project link -->
+                <div class="related-project-link">
+                    <h3>Related Project:</h3>
+                    <p>The concepts discussed in this post were heavily used in building the <a href="single-project.html?id=projectX" class="btn btn-secondary">Awesome Task Manager</a>. Check it out!</p>
+                </div>
+            </div>
+
+            <footer class="post-footer">
+                <div class="post-tags">
+                    <span>Tags:</span>
+                    <a href="#">JavaScript</a>, <a href="#">Async</a>, <a href="#">Promises</a>, <a href="#">Tutorial</a>
+                </div>
+            </footer>
+        </article>
+
+        <!-- Simple Comments Section Placeholder -->
+        <section class="comments-section">
+            <h2>Comments (3)</h2>
+            <div class="comment">
+                <p><strong>Jane Doe:</strong> Great article! Very clear explanation.</p>
+            </div>
+            <div class="comment">
+                <p><strong>John Smith:</strong> Thanks, this helped me a lot with a recent project.</p>
+            </div>
+            <form class="comment-form">
+                <h3>Leave a Comment</h3>
+                <input type="text" placeholder="Your Name" required>
+                <input type="email" placeholder="Your Email (not published)" required>
+                <textarea placeholder="Your Comment" rows="5" required></textarea>
+                <button type="submit" class="btn">Post Comment</button>
+            </form>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>© <span id="year"></span> Your Name. All Rights Reserved.</p>
+             <p>
+                <a href="mailto:your.email@example.com">Email</a> |
+                <a href="https://github.com/yourusername" target="_blank">GitHub</a> |
+                <a href="https://linkedin.com/in/yourusername" target="_blank">LinkedIn</a>
+            </p>
+        </div>
+    </footer>
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+        // Basic syntax highlighting (for demo, use a real library like Prism.js or Highlight.js)
+        document.querySelectorAll('pre code').forEach((block) => {
+            // In a real scenario, you'd use a library here
+            block.innerHTML = block.innerHTML.replace(/</g, "<").replace(/>/g, ">");
+        });
+    </script>
+</body>
+</html>

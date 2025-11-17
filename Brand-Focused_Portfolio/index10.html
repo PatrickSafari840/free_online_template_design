@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Name - Brand-Focused Portfolio</title>
+    <link rel="stylesheet" href="style10.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome for icons (optional, or use SVGs) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header id="main-header">
+        <div class="container">
+            <div class="logo-container">
+                <!--
+                    REPLACE WITH YOUR LOGO:
+                    - If SVG: <img src="your-logo.svg" alt="Your Name Logo" id="personal-logo">
+                    - If Text: <a href="#" id="personal-logo-text">YN</a> (Style with CSS)
+                -->
+                <a href="#" id="personal-logo-text"><span>YN</span></a>
+                <span class="logo-name">Your Name</span>
+            </div>
+            <nav id="main-nav">
+                <ul>
+                    <li><a href="#about">About Me</a></li>
+                    <li><a href="#why-me">Why Me?</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+            <button id="mobile-menu-toggle" aria-label="Toggle Menu">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <section id="hero">
+            <div class="container">
+                <h1>Hi, I'm <span class="brand-highlight">Your Name</span>.</h1>
+                <p class="subtitle">A passionate [Your Role - e.g., Full-Stack Developer] focused on building impactful digital experiences.</p>
+                <a href="#projects" class="cta-button">View My Work</a>
+            </div>
+        </section>
+
+        <section id="about">
+            <div class="container">
+                <div class="about-content">
+                    <div class="about-text">
+                        <h2>About Me</h2>
+                        <p>Hello! I'm [Your Name], a [Your Role] with a deep passion for [Your Passion - e.g., creating elegant and efficient solutions]. My journey in development started [Briefly mention how/why you started].</p>
+                        <p>I thrive on [What you enjoy - e.g., solving complex problems, collaborating with teams, learning new technologies]. My brand voice is [Describe your brand voice - e.g., professional yet approachable, innovative and direct, meticulously detailed].</p>
+                        <p>When I'm not coding, you can find me [Your Hobbies/Interests].</p>
+                    </div>
+                    <div class="about-image">
+                        <img src="https://via.placeholder.com/300x300.png?text=Your+Headshot" alt="Your Name - Professional Headshot" id="professional-headshot">
+                        <!-- Recommended: Replace placeholder with your actual headshot -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="why-me" class="dark-section">
+            <div class="container">
+                <h2>Why Me? My Unique Value Proposition</h2>
+                <div class="uvp-grid">
+                    <div class="uvp-item">
+                        <i class="fas fa-lightbulb icon-highlight"></i>
+                        <h3>Creative Problem Solving</h3>
+                        <p>I don't just write code; I architect solutions that are both innovative and practical, tailored to specific challenges.</p>
+                    </div>
+                    <div class="uvp-item">
+                        <i class="fas fa-users icon-highlight"></i>
+                        <h3>Client-Centric Approach</h3>
+                        <p>Your success is my priority. I focus on clear communication and understanding your needs to deliver results that exceed expectations.</p>
+                    </div>
+                    <div class="uvp-item">
+                        <i class="fas fa-rocket icon-highlight"></i>
+                        <h3>Continuous Learner</h3>
+                        <p>The tech world evolves rapidly, and I'm committed to staying at the forefront, constantly learning and applying new skills.</p>
+                    </div>
+                    <!-- Add/Modify these to reflect YOUR unique value -->
+                </div>
+                 <p class="uvp-summary">
+                    <strong>In essence:</strong> I bring a blend of technical expertise, creative thinking, and a strong commitment to [Your core value - e.g., quality / client satisfaction / innovation] to every project.
+                </p>
+            </div>
+        </section>
+
+        <section id="projects">
+            <div class="container">
+                <h2>My Projects</h2>
+                <div class="project-grid">
+                    <article class="project-card">
+                        <img src="https://via.placeholder.com/400x250.png?text=Project+Alpha" alt="Project Alpha Screenshot">
+                        <div class="project-info">
+                            <h3>Project Alpha</h3>
+                            <p>A brief description of Project Alpha, highlighting key technologies (e.g., React, Node.js, PostgreSQL) and its purpose.</p>
+                            <div class="project-tags">
+                                <span>React</span><span>Node.js</span><span>API</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="#" target="_blank" class="project-link">Live Demo <i class="fas fa-external-link-alt"></i></a>
+                                <a href="#" target="_blank" class="project-link">GitHub <i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="project-card">
+                        <img src="https://via.placeholder.com/400x250.png?text=Project+Beta" alt="Project Beta Screenshot">
+                        <div class="project-info">
+                            <h3>Project Beta</h3>
+                            <p>Description of Project Beta, focusing on challenges overcome or unique features (e.g., Python, Django, Machine Learning).</p>
+                            <div class="project-tags">
+                                <span>Python</span><span>Django</span><span>ML</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="#" target="_blank" class="project-link">Live Demo <i class="fas fa-external-link-alt"></i></a>
+                                <a href="#" target="_blank" class="project-link">GitHub <i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+                    </article>
+                    <!-- Add more project-card elements as needed -->
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="dark-section">
+            <div class="container">
+                <h2>Let's Connect</h2>
+                <p>Interested in working together or have a question? I'd love to hear from you!</p>
+                <a href="mailto:your.email@example.com" class="cta-button">Email Me</a>
+                <div class="social-links">
+                    <a href="https://linkedin.com/in/yourprofile" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://github.com/yourusername" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="https://twitter.com/yourusername" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <!-- Add other relevant social links -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>© <span id="current-year"></span> Your Name. All Rights Reserved.</p>
+            <p>Designed with <i class="fas fa-heart brand-highlight"></i> and a focus on Brand.</p>
+        </div>
+    </footer>
+
+    <script src="script10.js"></script>
+</body>
+</html>

@@ -1,0 +1,452 @@
+/* --- CSS VARIABLES - CUSTOMIZE YOUR NICHE THEME HERE --- */
+:root {
+    /* Primary Niche Colors */
+    --niche-primary-color: #007bff; /* Example: Professional Blue */
+    --niche-secondary-color: #0056b3; /* Example: Darker Blue for hover/accents */
+    --niche-accent-color: #ffc107;   /* Example: Bright Yellow for CTAs or highlights */
+
+    /* Text Colors */
+    --text-color-dark: #333;
+    --text-color-light: #f8f9fa;
+    --text-color-medium: #555;
+    --text-color-subtle: #777;
+
+    /* Background Colors */
+    --bg-light: #ffffff;
+    --bg-medium-light: #f8f9fa;
+    --bg-dark-ish: #343a40; /* For contrast or dark mode elements */
+
+    /* Typography */
+    --font-primary: 'Arial', sans-serif; /* REPLACE with a niche-appropriate font */
+    --font-headings: 'Georgia', serif;  /* REPLACE with a niche-appropriate font for headings */
+
+    /* Spacing & Layout */
+    --container-width: 1100px;
+    --spacing-unit: 1rem; /* Base unit, e.g., 16px */
+
+    /* Borders & Shadows */
+    --border-radius: 5px;
+    --box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* --- GLOBAL RESETS & BASE STYLES --- */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 16px; /* Base font size */
+}
+
+body {
+    font-family: var(--font-primary);
+    line-height: 1.6;
+    color: var(--text-color-dark);
+    background-color: var(--bg-light);
+    overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
+.container {
+    width: 90%;
+    max-width: var(--container-width);
+    margin: 0 auto;
+    padding: 0 calc(var(--spacing-unit) * 1);
+}
+
+h1, h2, h3, h4 {
+    font-family: var(--font-headings);
+    color: var(--niche-primary-color);
+    margin-bottom: calc(var(--spacing-unit) * 1.5);
+    line-height: 1.2;
+}
+
+h1 { font-size: clamp(2.5rem, 5vw, 3.5rem); }
+h2 { font-size: clamp(2rem, 4vw, 2.8rem); }
+h3 { font-size: clamp(1.5rem, 3vw, 2rem); }
+h4 { font-size: clamp(1.2rem, 2.5vw, 1.5rem); color: var(--text-color-dark); }
+
+p {
+    margin-bottom: var(--spacing-unit);
+    color: var(--text-color-medium);
+}
+
+a {
+    color: var(--niche-primary-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--niche-secondary-color);
+    text-decoration: underline;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+ul {
+    list-style: none;
+}
+
+/* --- UTILITY CLASSES --- */
+.text-center {
+    text-align: center;
+}
+
+/* --- HEADER & NAVIGATION --- */
+header {
+    background-color: var(--bg-light);
+    padding: var(--spacing-unit) 0;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    width:100%;
+}
+
+header nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--niche-primary-color);
+    text-decoration: none;
+}
+.logo:hover {
+    color: var(--niche-secondary-color);
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+}
+
+.nav-links li {
+    margin-left: calc(var(--spacing-unit) * 1.5);
+}
+
+.nav-links a {
+    font-weight: 500;
+    color: var(--text-color-medium);
+}
+.nav-links a:hover, .nav-links a.active {
+    color: var(--niche-primary-color);
+    text-decoration: none;
+}
+
+.menu-toggle {
+    display: none; /* Hidden by default, shown on mobile */
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+}
+.menu-toggle span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: var(--text-color-dark);
+    margin: 5px 0;
+    transition: all 0.3s ease-in-out;
+}
+
+
+/* --- CALL TO ACTION BUTTONS --- */
+.cta-button {
+    display: inline-block;
+    background-color: var(--niche-accent-color); /* Using accent for primary CTA */
+    color: var(--text-color-dark); /* Ensure good contrast with accent */
+    padding: calc(var(--spacing-unit)*0.75) calc(var(--spacing-unit)*1.5);
+    border-radius: var(--border-radius);
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    border: 2px solid transparent;
+}
+.cta-button:hover {
+    background-color: darken(var(--niche-accent-color), 10%);
+    color: var(--text-color-dark);
+    transform: translateY(-2px);
+    text-decoration: none;
+}
+.cta-button.secondary {
+    background-color: var(--niche-primary-color);
+    color: var(--text-color-light);
+}
+.cta-button.secondary:hover {
+    background-color: var(--niche-secondary-color);
+    color: var(--text-color-light);
+}
+.nav-cta { /* Smaller CTA for nav */
+    padding: calc(var(--spacing-unit)*0.5) var(--spacing-unit);
+    font-size: 0.9rem;
+}
+.text-button {
+    color: var(--niche-primary-color);
+    font-weight: bold;
+    text-decoration: none;
+}
+.text-button:hover {
+    text-decoration: underline;
+}
+
+
+/* --- SECTION STYLING --- */
+section {
+    padding: calc(var(--spacing-unit) * 4) 0;
+}
+section:nth-child(even) {
+    background-color: var(--bg-medium-light);
+}
+
+/* HERO SECTION */
+.hero-section {
+    /* Consider a niche-specific background image/gradient here */
+    /* background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('path/to/your/niche-hero-bg.jpg'); */
+    /* background-size: cover; */
+    /* background-position: center; */
+    background-color: var(--niche-primary-color); /* Fallback or solid color theme */
+    color: var(--text-color-light);
+    text-align: center;
+    padding: calc(var(--spacing-unit) * 6) 0;
+}
+.hero-section h1 {
+    color: var(--text-color-light); /* Override default heading color */
+    margin-bottom: var(--spacing-unit);
+}
+.hero-section .subheadline {
+    font-size: 1.2rem;
+    max-width: 700px;
+    margin: 0 auto calc(var(--spacing-unit) * 2) auto;
+    color: rgba(255,255,255,0.9);
+}
+.hero-section .cta-button {
+    font-size: 1.1rem;
+}
+
+/* NICHE SPECIALIZATION SECTION */
+.niche-specialization-section .niche-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: calc(var(--spacing-unit) * 2);
+    align-items: center;
+}
+.niche-specialization-section .niche-text {
+    flex: 2; /* Takes more space */
+    min-width: 300px;
+}
+.niche-specialization-section .niche-visual {
+    flex: 1; /* Takes less space */
+    min-width: 250px;
+    text-align: center;
+}
+.niche-specialization-section .niche-visual img {
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    max-width: 100%;
+}
+
+/* PROJECTS SECTION */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: calc(var(--spacing-unit) * 2);
+}
+.project-card {
+    background-color: var(--bg-light);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+.project-card img {
+    width: 100%;
+    height: 200px; /* Adjust as needed */
+    object-fit: cover;
+}
+.project-card .card-content {
+    padding: var(--spacing-unit);
+}
+.project-card h3 {
+    margin-top: 0;
+    font-size: 1.4rem; /* Slightly smaller for cards */
+}
+.project-card .project-niche-tagline {
+    font-style: italic;
+    color: var(--text-color-subtle);
+    font-size: 0.9rem;
+    margin-bottom: calc(var(--spacing-unit) * 0.5);
+}
+.project-card .project-tech {
+    font-size: 0.85rem;
+    color: var(--niche-secondary-color); /* Use a secondary niche color */
+    margin-bottom: var(--spacing-unit);
+}
+
+/* SKILLS SECTION */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: calc(var(--spacing-unit) * 2);
+}
+.skill-category h4 {
+    margin-bottom: var(--spacing-unit);
+    border-bottom: 2px solid var(--niche-accent-color);
+    padding-bottom: calc(var(--spacing-unit) * 0.5);
+    color: var(--niche-primary-color);
+}
+.skill-category ul li {
+    margin-bottom: calc(var(--spacing-unit) * 0.5);
+    padding-left: var(--spacing-unit);
+    position: relative;
+}
+.skill-category ul li::before {
+    content: '✓'; /* Or use a niche-specific icon */
+    color: var(--niche-accent-color);
+    position: absolute;
+    left: -5px;
+    font-weight: bold;
+}
+
+/* BLOG TEASER SECTION */
+.blog-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: calc(var(--spacing-unit) * 2);
+    margin-bottom: calc(var(--spacing-unit) * 2);
+}
+.blog-card {
+    background-color: var(--bg-light);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    overflow: hidden;
+}
+.blog-card img {
+    width: 100%;
+    height: 180px; /* Adjust as needed */
+    object-fit: cover;
+}
+.blog-card .card-content {
+    padding: var(--spacing-unit);
+}
+.blog-card h4 a {
+    color: var(--niche-primary-color);
+    text-decoration: none;
+}
+.blog-card h4 a:hover {
+    color: var(--niche-secondary-color);
+}
+.blog-card .blog-excerpt {
+    font-size: 0.9rem;
+    color: var(--text-color-medium);
+    margin-bottom: var(--spacing-unit);
+}
+
+/* CONTACT SECTION */
+.contact-form .form-group {
+    margin-bottom: var(--spacing-unit);
+}
+.contact-form label {
+    display: block;
+    margin-bottom: calc(var(--spacing-unit) * 0.25);
+    font-weight: bold;
+    color: var(--text-color-medium);
+}
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
+    width: 100%;
+    padding: calc(var(--spacing-unit) * 0.75);
+    border: 1px solid #ccc;
+    border-radius: var(--border-radius);
+    font-family: var(--font-primary);
+}
+.contact-form textarea {
+    resize: vertical;
+}
+.contact-form button[type="submit"] {
+    margin-top: var(--spacing-unit);
+}
+.contact-alternatives {
+    margin-top: calc(var(--spacing-unit) * 1.5);
+    text-align: center;
+}
+
+/* --- FOOTER --- */
+footer {
+    background-color: var(--bg-dark-ish);
+    color: var(--text-color-light);
+    text-align: center;
+    padding: calc(var(--spacing-unit) * 2) 0;
+    margin-top: calc(var(--spacing-unit) * 2);
+}
+footer p {
+    color: var(--text-color-light);
+    margin: 0;
+}
+
+
+/* --- RESPONSIVE DESIGN --- */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none; /* Hide for hamburger menu */
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 60px; /* Adjust based on header height */
+        left: 0;
+        background-color: var(--bg-light);
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        padding-bottom: var(--spacing-unit);
+    }
+    .nav-links.active {
+        display: flex;
+    }
+    .nav-links li {
+        margin: var(--spacing-unit) 0;
+        text-align: center;
+    }
+    .nav-links .nav-cta {
+        display: block;
+        margin: var(--spacing-unit) auto;
+        width: fit-content;
+    }
+    .menu-toggle {
+        display: block; /* Show hamburger */
+    }
+    .menu-toggle.active span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+    .menu-toggle.active span:nth-child(2) {
+        opacity: 0;
+    }
+    .menu-toggle.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(7px, -6px);
+    }
+
+    .hero-section h1 { font-size: 2rem; }
+    .hero-section .subheadline { font-size: 1rem; }
+
+    .niche-specialization-section .niche-content {
+        flex-direction: column;
+    }
+    .niche-specialization-section .niche-visual {
+        margin-top: var(--spacing-unit);
+    }
+}

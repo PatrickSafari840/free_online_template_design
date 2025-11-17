@@ -1,0 +1,353 @@
+/* --- Variables & Base --- */
+:root {
+    --bg-color: #1a1a1a; /* Dark gray */
+    --text-color: #e0e0e0; /* Light gray */
+    --accent-color: #00ff7f; /* Electric green */
+    --border-color: #444;
+    --card-bg: #252525;
+    --font-primary: 'Roboto Mono', monospace;
+    --font-secondary: 'Inter', sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-secondary);
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.7;
+    overflow-x: hidden; /* Prevent horizontal scroll from scanlines */
+    position: relative; /* For scanline overlay */
+}
+
+/* Subtle Scanline Overlay */
+.scanline-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* Allows interaction with elements underneath */
+    z-index: 9999;
+    background: repeating-linear-gradient(
+        transparent,
+        transparent 2px,
+        rgba(0, 0, 0, 0.1) 3px, /* Darker scanline */
+        rgba(0, 0, 0, 0.1) 4px
+    );
+    animation: scan 10s linear infinite;
+}
+
+@keyframes scan {
+    0% { background-position: 0 0; }
+    100% { background-position: 0 100px; } /* Adjust 100px for speed/density */
+}
+
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* --- Typography & General Elements --- */
+h1, h2, h3, h4 {
+    font-family: var(--font-primary);
+    color: var(--accent-color);
+    margin-bottom: 0.5em;
+    text-transform: uppercase; /* Brutalist touch */
+}
+
+h1 { font-size: 2.2rem; letter-spacing: 1px; }
+h2 { font-size: 2.5rem; margin-bottom: 0.2em; }
+h3.section-title {
+    font-size: 1.5rem;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 0.5em;
+    margin-bottom: 1.5em;
+    margin-top: 2em; /* Give sections breathing room */
+    color: var(--accent-color);
+}
+h4 { font-size: 1.2rem; color: var(--text-color); } /* Card titles */
+
+p {
+    margin-bottom: 1em;
+}
+
+a {
+    color: var(--accent-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    text-decoration: underline;
+    text-decoration-style: dotted;
+    color: white;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    border: 1px solid var(--accent-color);
+    color: var(--accent-color);
+    text-transform: uppercase;
+    font-family: var(--font-primary);
+    transition: background-color 0.3s ease, color 0.3s ease;
+    margin: 5px;
+}
+
+.btn:hover {
+    background-color: var(--accent-color);
+    color: var(--bg-color);
+    text-decoration: none;
+}
+
+.btn-link {
+    font-family: var(--font-primary);
+    font-size: 0.9rem;
+    color: var(--accent-color);
+    text-transform: uppercase;
+}
+
+.content-block {
+    border-left: 2px solid var(--accent-color);
+    padding-left: 20px;
+    margin-bottom: 20px;
+}
+
+/* --- Header & Nav --- */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+    border-bottom: 1px solid var(--border-color);
+    margin-bottom: 40px;
+}
+
+header .logo h1 {
+    margin-bottom: 0;
+    font-size: 1.8rem; /* Slightly smaller for header */
+}
+
+header nav a {
+    margin-left: 20px;
+    font-family: var(--font-primary);
+    font-size: 0.9rem;
+    text-transform: uppercase;
+}
+
+/* --- Hero Section --- */
+#hero {
+    text-align: left;
+    padding: 60px 0;
+    margin-bottom: 40px;
+    border-bottom: 1px dashed var(--border-color); /* Unfinished feel */
+}
+
+#hero h2 {
+    font-size: 2.8rem;
+    line-height: 1.2;
+}
+
+#hero .tagline {
+    font-size: 1.1rem;
+    color: #bbb; /* Slightly muted */
+    margin-top: 10px;
+}
+
+#hero .status-notice {
+    margin-top: 20px;
+    font-family: var(--font-primary);
+    font-size: 0.8rem;
+    color: #888;
+    border: 1px solid #555;
+    padding: 5px 10px;
+    display: inline-block;
+    background-color: #2a2a2a;
+}
+
+/* Blinking Cursor Animation */
+.cursor {
+    display: inline-block;
+    background-color: var(--accent-color);
+    width: 10px; /* Adjust width as needed */
+    height: 2.5rem; /* Match h2 line-height or size */
+    animation: blink 1s step-end infinite;
+    vertical-align: bottom;
+}
+
+@keyframes blink {
+    from, to { background-color: transparent; }
+    50% { background-color: var(--accent-color); }
+}
+
+/* --- Grid for Projects & Labs --- */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    margin-top: 20px;
+}
+
+.card {
+    background-color: var(--card-bg);
+    padding: 20px;
+    border: 1px solid var(--border-color);
+    /* box-shadow: 3px 3px 0 var(--accent-color); /* Brutalist shadow */
+    transition: transform 0.2s ease-out, box-shadow 0.2s ease-out;
+}
+
+.card:hover {
+    transform: translate(-3px, -3px);
+    box-shadow: 6px 6px 0 var(--accent-color);
+}
+
+.card h4 {
+    margin-bottom: 10px;
+    color: var(--accent-color); /* Make card titles pop */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.tech-stack span {
+    display: inline-block;
+    background-color: #333;
+    color: #ccc;
+    font-size: 0.75rem;
+    padding: 3px 8px;
+    margin-right: 5px;
+    margin-bottom: 10px;
+    border-radius: 3px;
+    font-family: var(--font-primary);
+}
+
+.tag {
+    font-size: 0.7rem;
+    padding: 3px 7px;
+    border-radius: 3px;
+    font-family: var(--font-primary);
+    text-transform: uppercase;
+    font-weight: bold;
+}
+.wip-tag { background-color: #ffc107; color: #333; } /* Yellow */
+.stable-tag { background-color: var(--accent-color); color: var(--bg-color); } /* Green */
+.concept-tag { background-color: #607d8b; color: white; } /* Blue-grey */
+
+
+/* --- Labs Section Specifics --- */
+.lab-card .status-indicator {
+    font-style: italic;
+    font-size: 0.8rem;
+    color: #aaa;
+}
+
+/* --- Learning Section --- */
+.learning-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+.learning-item {
+    background-color: var(--card-bg);
+    padding: 20px;
+    border: 1px solid var(--border-color);
+}
+
+.learning-item h4 {
+    margin-bottom: 10px;
+    color: var(--text-color);
+}
+
+.progress-bar-container {
+    width: 100%;
+    background-color: #333; /* Darker background for progress bar */
+    border-radius: 3px;
+    height: 15px;
+    margin-bottom: 8px;
+    overflow: hidden; /* Ensures progress bar stays within bounds */
+    border: 1px solid #444;
+}
+
+.progress-bar {
+    height: 100%;
+    background-color: var(--accent-color);
+    text-align: right;
+    line-height: 15px; /* Align text if you add percentage */
+    color: var(--bg-color);
+    font-size: 0.7rem;
+    font-weight: bold;
+    padding-right: 5px;
+    transition: width 0.5s ease-in-out;
+}
+
+
+/* --- Contact Section --- */
+.contact-links {
+    margin-top: 20px;
+    text-align: left; /* Or center if preferred */
+}
+
+/* --- Footer --- */
+footer {
+    text-align: center;
+    padding: 30px 0;
+    margin-top: 50px;
+    border-top: 1px solid var(--border-color);
+    font-size: 0.9rem;
+    color: #aaa;
+}
+
+footer .warning-text {
+    font-family: var(--font-primary);
+    color: #ff6b6b; /* A warning red */
+    font-size: 0.8rem;
+    margin-top: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    header nav {
+        margin-top: 15px;
+    }
+    header nav a {
+        margin-left: 0;
+        margin-right: 15px;
+        display: inline-block; /* Ensure they wrap nicely */
+        margin-bottom: 5px;
+    }
+    #hero h2 {
+        font-size: 2rem;
+    }
+    .cursor {
+        height: 2rem;
+    }
+    .grid {
+        grid-template-columns: 1fr; /* Stack cards on smaller screens */
+    }
+    .learning-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 { font-size: 1.8rem; }
+    #hero h2 { font-size: 1.8rem; }
+    .cursor { height: 1.8rem; }
+    header nav a { font-size: 0.85rem; }
+    .btn { padding: 8px 15px; font-size: 0.9rem; }
+}
